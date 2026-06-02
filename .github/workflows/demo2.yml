@@ -1,5 +1,7 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+env :
+   cloud: google-cloud 
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
@@ -12,6 +14,8 @@ on:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    env:
+     Greeting: hello
     steps:
       - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo " This job is now running on a ${{ runner.os }} server hosted by GitHub!"
